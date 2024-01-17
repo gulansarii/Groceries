@@ -60,6 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               TextField(
+                controller: homeScreenController.searchController,
                 style: const TextStyle(fontSize: 15),
                 decoration: InputDecoration(
                   prefixIcon: const Icon(Icons.search),
