@@ -136,7 +136,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: Get.height * .26,
                       width: Get.width * .41,
                       decoration: BoxDecoration(
-                          color: Colors.grey,
+                          border: Border.all(
+                            color: Colors.grey.shade300, // Set border color
+                            width: 2.0, // Set border width
+                          ),
                           borderRadius: BorderRadius.circular(18)),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 9),
@@ -239,7 +242,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: Get.height * .26,
                       width: Get.width * .41,
                       decoration: BoxDecoration(
-                          color: Colors.grey,
+                          border: Border.all(
+                            color: Colors.grey.shade300, // Set border color
+                            width: 2.0, // Set border width
+                          ),
                           borderRadius: BorderRadius.circular(18)),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 9),
