@@ -19,7 +19,9 @@ class _SigninScreenState extends State<SigninScreen> {
     return Scaffold(
         body: SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16),
+        padding: const EdgeInsets.symmetric(
+          vertical: 16,
+        ),
         child: Column(
           children: [
             Container(
