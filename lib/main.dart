@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:groceries/screens/onbording_screen.dart';
-import 'package:groceries/screens/signin_screen.dart';
-import 'package:groceries/screens/splash_screen.dart';
+import 'package:groceries/screens/productdetail_screen.dart';
 
-import 'package:groceries/screens/verification_screen.dart';
+import 'package:groceries/screens/search_screen.dart';
+
+import 'package:groceries/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
