@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:groceries/controllers/productdetailController.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({super.key});
@@ -9,7 +10,9 @@ class ProductDetailScreen extends StatefulWidget {
 }
 
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
+  final productController = Get.put(ProductController());
   final double initialRating = 3.5;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,29 +40,27 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           const SizedBox(
             height: 8,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: SizedBox(
-              height: 36,
-              width: Get.width,
-              child: Row(
-                children: [
-                  const Text(
-                    'Naturel Red Apple',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  const Spacer(),
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.favorite_border_outlined))
-                ],
-              ),
+          SizedBox(
+            height: 36,
+            width: Get.width,
+            child: Row(
+              children: [
+                const Text(
+                  'Naturel Red Apple',
+                  style: TextStyle(fontSize: 20),
+                ),
+                const Spacer(),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.favorite_border_outlined))
+              ],
             ),
           ),
           Container(
             height: Get.height * .03,
             width: Get.width,
             color: Colors.grey,
+            child: Text('data'),
           ),
           const SizedBox(
             height: 12,
@@ -71,14 +72,35 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               children: [
                 Container(
                   height: Get.height * .07,
-                  width: Get.width * .45,
-                  color: Colors.grey,
+                  width: Get.width * .13,
+                  child: IconButton(onPressed: () {}, icon: Icon(Icons.remove)),
+                ),
+                Container(
+                  height: Get.height * .07,
+                  width: Get.width * .13,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                          color: Colors.grey.shade300, // Set border color
+                          width: 2.0),
+                      borderRadius: BorderRadius.circular(18)),
+                ),
+                Container(
+                  height: Get.height * .07,
+                  width: Get.width * .13,
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.add,
+                        color: Color.fromRGBO(83, 177, 117, 1),
+                      )),
                 ),
                 const Spacer(),
                 Container(
+                  alignment: Alignment.center,
                   height: Get.height * .07,
                   width: Get.width * .3,
                   color: Colors.grey,
+                  child: Text('data'),
                 ),
               ],
             ),
@@ -97,16 +119,22 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 ),
                 const Spacer(),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      productController.toggleContainerVisibility();
+                    },
                     icon: const Icon(Icons.arrow_drop_down_rounded))
               ],
             ),
           ),
-          Container(
-            height: Get.height * .1,
-            width: Get.width,
-            color: Colors.grey,
-          ),
+          Obx(() {
+            return Visibility(
+                visible: productController.isContainerVisible.value,
+                child: Container(
+                  height: Get.height * .1,
+                  width: Get.width,
+                  color: Colors.grey,
+                ));
+          }),
           const Divider(
             height: 26,
           ),
@@ -118,6 +146,18 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 const Text(
                   'Nutritions',
                   style: TextStyle(fontSize: 14),
+                ),
+                Container(
+                  height: 20,
+                  width: Get.width * .47,
+                ),
+                const Spacer(),
+                Container(
+                  height: 24,
+                  width: Get.width * .2,
+                  decoration: BoxDecoration(
+                      color: Colors.grey.shade300,
+                      borderRadius: BorderRadius.circular(8)),
                 ),
                 const Spacer(),
                 IconButton(
@@ -137,6 +177,26 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 const Text(
                   'Review',
                   style: TextStyle(fontSize: 14),
+                ),
+                Container(
+                  height: 20,
+                  width: Get.width * .39,
+                ),
+                const Spacer(),
+                Container(
+                  height: 28,
+                  width: Get.width * .34,
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(8)),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: List.generate(5, (index) {
+                      return Icon(
+                        Icons.star,
+                        color: Colors.orange,
+                      );
+                    }),
+                  ),
                 ),
                 const Spacer(),
                 IconButton(

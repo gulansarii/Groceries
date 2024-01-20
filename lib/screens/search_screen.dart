@@ -20,12 +20,12 @@ class _SearchScreenState extends State<SearchScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     height: 55,
                     width: Get.width,
                     child: Row(
                       children: [
-                        Container(
+                        SizedBox(
                           height: 55,
                           width: Get.width * .78,
                           child: TextField(
@@ -53,21 +53,22 @@ class _SearchScreenState extends State<SearchScreen> {
                             ),
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Container(
                           alignment: Alignment.center,
                           height: 40,
                           width: Get.width * .1,
                           child: IconButton(
-                              onPressed: () {}, icon: Icon(Icons.settings)),
+                              onPressed: () {},
+                              icon: const Icon(Icons.settings)),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 16,
                   ),
-                  Container(
+                  SizedBox(
                     height: Get.height,
                     width: Get.width,
                     child: GridView.builder(
