@@ -209,51 +209,129 @@ void settingModalBottomSheet(context) {
         return Container(
           height: Get.height * .9,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
             child: Column(
               children: [
-                ListTile(
-                    title: const Text(
-                      'Checkout',
-                      style: TextStyle(fontSize: 24),
-                    ),
-                    onTap: () => {}),
-                const Divider(),
-                ListTile(
-                  title: const Text(
-                    'Delivery',
-                    style: TextStyle(fontSize: 18),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  height: Get.height * .06,
+                  width: Get.width,
+                  child: const Text(
+                    'Checkout',
+                    style: TextStyle(fontSize: 24),
                   ),
-                  onTap: () => {},
-                ),
-                const Divider(),
-                ListTile(
-                  title: const Text(
-                    'Payment',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  onTap: () => {},
-                ),
-                const Divider(),
-                ListTile(
-                  title: const Text(
-                    'Promo Code',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  onTap: () => {},
-                ),
-                const Divider(),
-                ListTile(
-                  title: const Text(
-                    'Total Cost',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  onTap: () => {},
                 ),
                 const Divider(),
                 Container(
+                  height: Get.height * .05,
+                  width: Get.width,
+                  child: Row(
+                    children: [
+                      const Text(
+                        'Delivery',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w300),
+                      ),
+                      const Spacer(),
+                      const Text(
+                        'Select Method',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
+                      ),
+                      IconButton(
+                          iconSize: 18,
+                          onPressed: () {},
+                          icon: const Icon(Icons.arrow_forward_ios_outlined))
+                    ],
+                  ),
+                ),
+                const Divider(),
+                Container(
+                  height: Get.height * .05,
+                  width: Get.width,
+                  child: Row(
+                    children: [
+                      const Text(
+                        'Pament',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w300),
+                      ),
+                      const Spacer(),
+                      Container(
+                        height: 18,
+                        width: 26,
+                        color: Colors.grey,
+                      ),
+                      IconButton(
+                          iconSize: 18,
+                          onPressed: () {},
+                          icon: const Icon(Icons.arrow_forward_ios_outlined))
+                    ],
+                  ),
+                ),
+                const Divider(),
+                Container(
+                  height: Get.height * .05,
+                  width: Get.width,
+                  child: Row(
+                    children: [
+                      const Text(
+                        'Promo Code',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w300),
+                      ),
+                      const Spacer(),
+                      const Text(
+                        'Pick discount',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
+                      ),
+                      IconButton(
+                          iconSize: 18,
+                          onPressed: () {},
+                          icon: const Icon(Icons.arrow_forward_ios_outlined))
+                    ],
+                  ),
+                ),
+                const Divider(),
+                Container(
+                  height: Get.height * .05,
+                  width: Get.width,
+                  child: Row(
+                    children: [
+                      const Text(
+                        'Total Cost',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w300),
+                      ),
+                      const Spacer(),
+                      const Text(
+                        '13.97',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
+                      ),
+                      IconButton(
+                          iconSize: 18,
+                          onPressed: () {},
+                          icon: const Icon(Icons.arrow_forward_ios_outlined))
+                    ],
+                  ),
+                ),
+                const Divider(),
+                Container(
+                  height: Get.height * .05,
+                  width: Get.width,
+                  child: const Text(
+                    'By placing an order you agree to our                  Terms And Conditions',
+                    style: TextStyle(fontSize: 14),
+                  ),
+                ),
+                SizedBox(
+                  height: 13,
+                ),
+                Container(
                   alignment: Alignment.center,
-                  height: 66,
+                  height: 60,
                   width: Get.width * .9,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(19),
